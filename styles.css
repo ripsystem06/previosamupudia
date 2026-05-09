@@ -152,6 +152,12 @@ body {
   color: var(--magenta);
 }
 
+/* ── Language visibility ────────────────────────────── */
+.text-es { display: none; }
+.text-en { display: none; }
+body.es .text-es { display: inline; }
+body:not(.es) .text-en { display: inline; }
+
 /* ── Animations ────────────────────────────────────── */
 @keyframes marquee {
   from { transform: translateX(0); }

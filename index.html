@@ -1,16 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alan Ampudia — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <script>
-    var host = window.location.hostname;
-    if (host === 'alanampudia.store' || host === 'www.alanampudia.store') {
-      window.location.replace('/en.html');
+    var isEN = window.location.hostname === 'alanampudia.store' || window.location.hostname === 'www.alanampudia.store';
+    document.documentElement.lang = isEN ? 'en' : 'es';
+    document.title = isEN ? 'Alan Ampudia — Coming Soon' : 'Alan Ampudia — Próximamente';
+    if (!isEN) document.body.classList.add('es');
+  </script>
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header class="banner banner--top">
+    <div class="banner__scroll">
+      <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">COMING SOON</span>
+      <span class="text-en">COMING SOON</span>
+      <span class="text-en">COMING SOON</span>
+      <span class="text-en">COMING SOON</span>
+      <span class="text-en">COMING SOON</span>
+      <span class="text-en">COMING SOON</span>
+      <span class="text-en">COMING SOON</span>
+      <span class="text-en">COMING SOON</span>
+      <span class="text-en">COMING SOON</span>
+      <span class="text-en">COMING SOON</span>
+      <!-- duplicados para loop infinito seamless -->
+      <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">COMING SOON</span>
+      <span class="text-en" aria-hidden="true">COMING SOON</span>
+      <span class="text-en" aria-hidden="true">COMING SOON</span>
+      <span class="text-en" aria-hidden="true">COMING SOON</span>
+      <span class="text-en" aria-hidden="true">COMING SOON</span>
+      <span class="text-en" aria-hidden="true">COMING SOON</span>
+      <span class="text-en" aria-hidden="true">COMING SOON</span>
+      <span class="text-en" aria-hidden="true">COMING SOON</span>
+      <span class="text-en" aria-hidden="true">COMING SOON</span>
+      <span class="text-en" aria-hidden="true">COMING SOON</span>
+    </div>
+  </header>
+
+  <main id="main-content" class="coming-soon">
+    <div class="coming-soon__slide coming-soon__slide--a"></div>
+    <div class="coming-soon__slide coming-soon__slide--b"></div>
+  </main>
+
+  <footer id="footer" class="dev-credit">
+    <a href="https://www.xant.com.mx" target="_blank" rel="noopener">
+      <span class="text-es">Desarrollado por</span><span class="text-en">Developed by</span>
+      <span class="dev-credit__highlight">🏎️ Xant</span>
+    </a>
+  </footer>
+
+  <script>
+    var isEN = window.location.hostname === 'alanampudia.store' || window.location.hostname === 'www.alanampudia.store';
+    var main = document.getElementById('main-content');
+    var footer = document.getElementById('footer');
+
+    if (isEN) {
+      document.querySelectorAll('.text-es').forEach(function(el) { el.remove(); });
+      main.classList.remove('coming-soon--slideshow');
+      main.innerHTML = '';
     } else {
-      window.location.replace('/es.html');
+      document.querySelectorAll('.text-en').forEach(function(el) { el.remove(); });
+      main.classList.add('coming-soon--slideshow');
     }
   </script>
-  <title>Alan Ampudia</title>
-</head>
-<body></body>
+</body>
 </html>
