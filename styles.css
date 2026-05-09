@@ -1,0 +1,107 @@
+/* ── Variables ────────────────────────────────────── */
+:root {
+  --sand: #C8A96E;
+  --sand-light: #E8C97A;
+  --black: #000000;
+  --white: #F5F0E8;
+  --white-dim: #B0A898;
+  --magenta: #E91E63;
+}
+
+/* ── Reset ────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: var(--black);
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Grain texture ────────────────────────────────── */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ── Scrolling text (top) ──────────────────────────── */
+.banner {
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 0.6rem 0;
+}
+
+.banner__scroll {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 18s linear infinite;
+}
+
+.banner__scroll span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  padding-right: 3rem;
+  flex-shrink: 0;
+}
+
+/* ── Image area ────────────────────────────────────── */
+.coming-soon {
+  flex: 1 1 auto;
+  min-height: 0;
+  background: var(--black) no-repeat center / contain;
+  background-image: url('proximamente.png');
+}
+
+/* ── Dev credit ──────────────────────────────────── */
+.dev-credit {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 0.6rem 0;
+  border-top: 1px solid rgba(233, 30, 99, 0.2);
+  background: var(--black);
+}
+
+.dev-credit a {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dev-credit a:hover {
+  color: var(--magenta);
+}
+
+.dev-credit__highlight {
+  color: var(--magenta);
+}
+
+/* ── Animations ────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
