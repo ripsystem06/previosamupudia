@@ -52,7 +52,7 @@ body {
   display: flex;
   width: max-content;
   white-space: nowrap;
-  animation: marquee 20s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 .banner__scroll span {
