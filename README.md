@@ -37,12 +37,6 @@ Página de "próximamente" para los dominios de Alan Ampudia. Desplegada en Verc
 └── README.md
 ```
 
-## Deploy
-
-1. Conectar repo a Vercel
-2. Framework: **Other**
-3. Agregar dominios en Settings → Domains
-
 ## Licencia
 
 Privado — Alan Ampudia
