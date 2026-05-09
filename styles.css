@@ -64,12 +64,63 @@ body {
   flex-shrink: 0;
 }
 
-/* ── Image area ────────────────────────────────────── */
+/* ── Image area — static (EN version) ─────────────── */
 .coming-soon {
   flex: 1 1 auto;
   min-height: 0;
   background: var(--black) no-repeat center / contain;
+  background-image: url('comingsoon.png');
+}
+
+/* ── Slideshow — ES version ────────────────────────── */
+.coming-soon--slideshow {
+  position: relative;
+  background-image: none;
+}
+
+.coming-soon__slide {
+  position: absolute;
+  inset: 0;
+  background: var(--black) no-repeat center / contain;
+  transition: opacity 1s ease-in-out;
+}
+
+.coming-soon__slide--a {
   background-image: url('proximamente.png');
+  opacity: 1;
+}
+
+.coming-soon__slide--b {
+  background-image: url('comingsoon.png');
+  opacity: 0;
+}
+
+.coming-soon--slideshow .coming-soon__slide--a {
+  animation: fadeA 10s ease-in-out infinite;
+}
+
+.coming-soon--slideshow .coming-soon__slide--b {
+  animation: fadeB 10s ease-in-out infinite;
+}
+
+/* 0-5s: slide A visible (fade in hold)
+   5-6s: crossfade to B
+   6-10s: slide B visible
+   10-11s: crossfade to A (loop) */
+@keyframes fadeA {
+  0%   { opacity: 1; }
+  45%  { opacity: 1; }
+  50%  { opacity: 0; }
+  95%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeB {
+  0%   { opacity: 0; }
+  45%  { opacity: 0; }
+  50%  { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* ── Dev credit ──────────────────────────────────── */
