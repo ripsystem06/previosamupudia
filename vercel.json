@@ -1,20 +1,5 @@
 {
   "framework": null,
   "outputDirectory": ".",
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/es.html",
-      "has": [
-        { "type": "host", "value": "alanampudia.com" }
-      ]
-    },
-    {
-      "source": "/",
-      "destination": "/en.html",
-      "has": [
-        { "type": "host", "value": "alanampudia.store" }
-      ]
-    }
-  ]
+  "cleanUrls": true
 }
