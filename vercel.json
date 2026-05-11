@@ -1,26 +1,5 @@
 {
   "framework": null,
   "outputDirectory": ".",
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "alanampudia.com" }],
-      "destination": "/index-com.html"
-    },
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "www.alanampudia.com" }],
-      "destination": "/index-com.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "alanampudia.com" }],
-      "destination": "/$1"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.alanampudia.com" }],
-      "destination": "/$1"
-    }
-  ]
+  "cleanUrls": true
 }

@@ -9,10 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    var isEN = window.location.hostname === 'alanampudia.store' || window.location.hostname === 'www.alanampudia.store';
+    var host = window.location.hostname;
+    var isEN = host === 'alanampudia.store' || host === 'www.alanampudia.store';
+    var isES = host === 'alanampudia.com' || host === 'www.alanampudia.com';
+    if (!isEN && !isES) isES = true;
     document.documentElement.lang = isEN ? 'en' : 'es';
     document.title = isEN ? 'Alan Ampudia — Coming Soon' : 'Alan Ampudia — Próximamente';
-    if (!isEN) document.body.classList.add('es');
+    if (isES) document.body.classList.add('es');
   </script>
 </head>
 <body>
@@ -95,9 +98,11 @@
   </footer>
 
   <script>
-    var isEN = window.location.hostname === 'alanampudia.store' || window.location.hostname === 'www.alanampudia.store';
+    var host = window.location.hostname;
+    var isEN = host === 'alanampudia.store' || host === 'www.alanampudia.store';
+    var isES = host === 'alanampudia.com' || host === 'www.alanampudia.com';
+    if (!isEN && !isES) isES = true;
     var main = document.getElementById('main-content');
-    var footer = document.getElementById('footer');
 
     if (isEN) {
       document.querySelectorAll('.text-es').forEach(function(el) { el.remove(); });
