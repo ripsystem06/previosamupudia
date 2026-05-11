@@ -1,5 +1,17 @@
 {
   "framework": null,
   "outputDirectory": ".",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "alanampudia.com" }],
+      "destination": "/index-com.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.alanampudia.com" }],
+      "destination": "/index-com.html"
+    }
+  ]
 }
