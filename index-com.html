@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    var isEN = window.location.hostname === 'alanampudia.com' || window.location.hostname === 'www.alanampudia.com';
+    document.documentElement.lang = isEN ? 'en' : 'es';
+    document.title = isEN ? 'Alan Ampudia — Coming Soon' : 'Alan Ampudia — Próximamente';
+    if (!isEN) document.body.classList.add('es');
+  </script>
 </head>
-<body class="es">
+<body>
   <div class="grain"></div>
 
   <header class="banner banner--top">
@@ -24,6 +30,16 @@
       <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
       <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
       <span class="text-es">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en">PRÓXIMAMENTE — COMING SOON</span>
       <!-- duplicados para loop infinito seamless -->
       <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
       <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
@@ -35,10 +51,20 @@
       <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
       <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
       <span class="text-es" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
+      <span class="text-en" aria-hidden="true">PRÓXIMAMENTE — COMING SOON</span>
     </div>
   </header>
 
-  <main id="main-content" class="coming-soon coming-soon--slideshow">
+  <main id="main-content" class="coming-soon">
     <div class="coming-soon__slide coming-soon__slide--a"></div>
     <div class="coming-soon__slide coming-soon__slide--b"></div>
   </main>
@@ -46,6 +72,7 @@
   <section class="social">
     <p class="social__heading">
       <span class="text-es">Sígueme en mis redes</span>
+      <span class="text-en">Follow me on social media</span>
     </p>
     <div class="social__links">
       <a class="social__link" href="https://www.facebook.com/ampudia10?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook">
@@ -62,11 +89,24 @@
 
   <footer id="footer" class="dev-credit">
     <a href="https://www.xant.com.mx" target="_blank" rel="noopener">
-      <span class="text-es">Desarrollado por</span>
-      <span class="dev-credit__highlight">🇲🇽 Xant</span>
+      <span class="text-es">Desarrollado por</span><span class="text-en">Developed by</span>
+      <span class="dev-credit__highlight">🏎️ Xant</span>
     </a>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    var isEN = window.location.hostname === 'alanampudia.com' || window.location.hostname === 'www.alanampudia.com';
+    var main = document.getElementById('main-content');
+    var footer = document.getElementById('footer');
+
+    if (isEN) {
+      document.querySelectorAll('.text-es').forEach(function(el) { el.remove(); });
+      main.classList.remove('coming-soon--slideshow');
+      main.innerHTML = '';
+    } else {
+      document.querySelectorAll('.text-en').forEach(function(el) { el.remove(); });
+      main.classList.add('coming-soon--slideshow');
+    }
+  </script>
 </body>
 </html>
